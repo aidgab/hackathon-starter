@@ -21,13 +21,14 @@ exports.postAddrequest = function(req, res) {
         if (err){
             req.flash('errors', { msg: 'Error saving listing' });
         }
+        return res.redirect('/getskill');
     });
-    return res.redirect('/getskill');
+
 }
 
 exports.getGetskill = function(req, res) {
 //    if (!req.user) return res.redirect('/login');
-    Listing.find({type: 'request'}, function (err, listings){
+    Listing.find({type: 'request'}).sort({createdAt: -1}).exec(function (err, listings){
         res.render('getskill', {
             title: 'Learn',
             listings: listings,

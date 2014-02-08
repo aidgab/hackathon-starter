@@ -1,19 +1,38 @@
 extends layout
 block content
-    form.form-horizontal(role='form', method='POST')
-        .form-group
-            .col-sm-4
-                input.form-control(type='text', name='title', id='title', autofocus=true, placeholder='Title', required='required')
-        .form-group
-            .col-sm-4
-                textarea.form-control(type='text', name='description', id='description', rows='3', placeholder='Description', required='required')
-        .form-group
-            .col-sm-4
-                input.form-control(type='text', name='location', id='location', placeholder='Location')
-        .form-group
-            input.form-control(type='hidden', name='_csrf', value=token)
-        .form-group
-            .col-sm-4
-                button.btn.btn-default(type='submit')
-                    i.fa.fa-mail-forward
-                    | Create
+    .row
+        .col-xs-8.col-xs-offset-2
+            form.text-center.form-horizontal(action='/addrequest', role='form', method='POST')
+                .form-group
+                    .col-sm-12
+                        .btn-toolbar(style="width: 100%; text-align: center;")
+                            .btn-group(style="width: 100%;")
+                                button.btn.btn-primary.active(style="width: 50%;")
+                                    |  Want to learn
+                                button.btn.btn-primary(style="width: 50%;")
+                                    |  Can teach
+                .form-group
+                    .col-sm-12
+                        input.form-control(type='text', name='title', id='title', autofocus=true, placeholder='Title', required='required')
+                .form-group
+                    .col-sm-12
+                        textarea.form-control(type='text', name='description', id='description', rows='3', placeholder='Description', required='required')
+                .form-group
+                    .col-sm-12
+                        input.form-control(type='text', name='location', id='location', placeholder='Location')
+                .form-group
+                    .col-sm-5
+                        input.form-control(type='text', name='reward', id='reward', placeholder='Reward ($ per hour)')
+                    .col-sm-7.text-left
+                .form-group
+                    .col-sm-5
+                        input.form-control(type='text', name='phone', id='phone', placeholder='Phone')
+                    .col-sm-2
+                        | or/and
+                    .col-sm-5
+                        input.form-control(type='text', name='email', id='email', placeholder='Email')
+                .form-group
+                    .col-sm-12
+                        button.btn.btn-default(type='submit', style="width: 100%;")
+                            | Create
+                            span.fui-arrow-right

@@ -16,7 +16,9 @@
         li(class=title=='Teach'?'active':undefined)
           a(href='/giveskill') Teach
         li(class=title=='Add request'?'active':undefined)
-          a(href='/addrequest') Add request
+          a(href='/addrequest')
+            span.fui-plus
+            |  Add request
       ul.nav.navbar-nav.navbar-right
         if !user
           li(class=title=='Login'?'active':undefined)
