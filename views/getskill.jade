@@ -1,0 +1,29 @@
+extends layout
+
+block content
+
+    if user
+        form.form-horizontal(role='form', method='POST')
+        .form-group
+            .col-sm-4
+                input.form-control(type='text', name='title', id='title', autofocus=true, placeholder='Title')
+        .form-group
+            .col-sm-4
+                textarea.form-control(type='text', name='description', id='description', rows='3', placeholder='Description')
+        .form-group
+            .col-sm-4
+                input.form-control(type='text', name='location', id='location', placeholder='Location')
+        .form-group
+            input.form-control(type='hidden', name='_csrf', value=token)
+        .form-group
+            .col-sm-4
+                button.btn.btn-default(type='submit')
+                    i.fa.fa-mail-forward
+                    | Create
+    else
+        .alert.alert-success.animated.flipInX
+            strong Please 
+            a(href="/login") login
+            |  to request
+
+    h2 Learn something
