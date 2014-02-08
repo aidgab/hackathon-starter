@@ -24,7 +24,7 @@ exports.postAddrequest = function(req, res) {
         return res.redirect('/getskill');
     });
 
-}
+};
 
 exports.getGetskill = function(req, res) {
 //    if (!req.user) return res.redirect('/login');
