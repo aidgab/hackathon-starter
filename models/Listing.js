@@ -1,8 +1,8 @@
 var mongoose = require('mongoose');
 
 var listingSchema = new mongoose.Schema({
-  title: {type: String},
-  description: {type: String},
+  title: {type: String,  required: true},
+  description: {type: String, required: true},
   reward: {type: String},
   location: {type: String},
   phone: {type: String},

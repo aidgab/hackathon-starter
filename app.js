@@ -94,7 +94,9 @@ app.use(express.errorHandler());
  */
 
 app.get('/', homeController.index);
-app.get('/getskill', homeController.getskill);
+app.get('/getskill', homeController.getGetskill);
+app.get('/addrequest', homeController.getAddrequest);
+app.post('/addrequest', homeController.postAddrequest);
 app.get('/giveskill', homeController.giveskill);
 
 app.get('/login', userController.getLogin);

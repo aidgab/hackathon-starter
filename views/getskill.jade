@@ -1,29 +1,38 @@
 extends layout
 
 block content
-
-    if user
-        form.form-horizontal(role='form', method='POST')
-        .form-group
-            .col-sm-4
-                input.form-control(type='text', name='title', id='title', autofocus=true, placeholder='Title')
-        .form-group
-            .col-sm-4
-                textarea.form-control(type='text', name='description', id='description', rows='3', placeholder='Description')
-        .form-group
-            .col-sm-4
-                input.form-control(type='text', name='location', id='location', placeholder='Location')
-        .form-group
-            input.form-control(type='hidden', name='_csrf', value=token)
-        .form-group
-            .col-sm-4
-                button.btn.btn-default(type='submit')
-                    i.fa.fa-mail-forward
-                    | Create
-    else
+    if !user
         .alert.alert-success.animated.flipInX
-            strong Please 
+            strong Please &nbsp;
             a(href="/login") login
             |  to request
 
-    h2 Learn something
+    //h2 Learn something
+
+    each listing, index in listings
+        .row
+            .col-sm-12
+                h3=listing.title
+                | #{listing.description}
+                p
+                    strong Location:
+                    |  #{listing.location}
+                .row
+                    .col-sm-4
+                        strong Reward:
+                        if listing.reward
+                            |  #{listing.reward}
+                        else
+                            |  —
+                    .col-sm-4
+                        strong Phone:
+                        if listing.phone
+                            |  #{listing.phone}
+                        else
+                            |  —
+                    .col-sm-4
+                        strong Email:
+                        if listing.email
+                            |  #{listing.email}
+                        else
+                            |  —
