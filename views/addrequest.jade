@@ -1,5 +1,9 @@
 extends layout
 block content
+    script.
+        $(document).on('click', 'a[href="#fakelink"]', function (e) {
+          e.preventDefault();
+        });
     .row
         .col-xs-8.col-xs-offset-2
             form.text-center.form-horizontal(action='/addrequest', role='form', method='POST')
@@ -7,9 +11,9 @@ block content
                     .col-sm-12
                         .btn-toolbar(style="width: 100%; text-align: center;")
                             .btn-group(style="width: 100%;")
-                                button.btn.btn-primary.active(style="width: 50%;")
+                                a.btn.btn-primary.active(href="#fakelink", style="width: 50%;")
                                     |  Want to learn
-                                button.btn.btn-primary(style="width: 50%;")
+                                a.btn.btn-primary(href="#fakelink", style="width: 50%;")
                                     |  Can teach
                 .form-group
                     .col-sm-12

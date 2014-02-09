@@ -26,6 +26,27 @@ exports.postAddrequest = function(req, res) {
 
 };
 
+exports.postCreateListing = function (req, res){
+    var lst = new Listing({
+        title: req.body.title,
+        description: req.body.description,
+        location: req.body.location,
+        type: req.body.type || 'request'
+    });
+    lst.save(function (err){
+        if (err){
+            res.send({
+                status: 'error',
+                error: err
+            });
+            return;
+        }
+        res.send({
+            status: 'ok'
+        });
+    });
+}
+
 exports.getGetskill = function(req, res) {
 //    if (!req.user) return res.redirect('/login');
     Listing.find({type: 'request'}).sort({createdAt: -1}).exec(function (err, listings){

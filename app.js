@@ -99,6 +99,7 @@ app.get('/addrequest', homeController.getAddrequest);
 app.post('/addrequest', homeController.postAddrequest);
 app.get('/giveskill', homeController.giveskill);
 app.get('/listings/:type', homeController.getListings);
+app.post('/listings/create', homeController.postCreateListing);
 
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
