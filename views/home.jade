@@ -1,14 +1,15 @@
 extends layout
 
 block content
-  h1.text-center(style='text-transform: uppercase;') Share / learn whatewer you want
-  p.lead.text-center
-    | This is p2p skill teaching platform.
-    br
-    | Service for people who want to share or gain skills. Some users tell about their readiness to learn some skills or crafts. The other part declare what they can teach. The service help such people to find each other and earn on skill sharing.
+  .row(style="padding-top: 30px;")
+      h1.text-center(style='text-transform: uppercase;') Share / learn whatewer you want
+      p.lead.text-center
+        | This is p2p skill teaching platform.
+        br
+        | Service for people who want to share or gain skills. Some users tell about their readiness to learn some skills or crafts. The other part declare what they can teach. The service help such people to find each other and earn on skill sharing.
 
-  .row
-      .col-xs-3.col-xs-offset-3
-        a.btn.btn-block.btn-lg.btn-danger(href="/getskill") Learn
-      .col-xs-3
-        a.btn.btn-block.btn-lg.btn-primary(href="#fakelink") Teach
+      .row
+          .col-xs-3.col-xs-offset-3
+            a.btn.btn-block.btn-lg.btn-danger(href="/getskill") Learn
+          .col-xs-3
+            a.btn.btn-block.btn-lg.btn-primary(href="#fakelink") Teach
