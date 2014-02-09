@@ -98,6 +98,7 @@ app.get('/getskill', homeController.getGetskill);
 app.get('/addrequest', homeController.getAddrequest);
 app.post('/addrequest', homeController.postAddrequest);
 app.get('/giveskill', homeController.giveskill);
+app.get('/listings/:type', homeController.getListings);
 
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);

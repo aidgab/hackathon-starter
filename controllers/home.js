@@ -37,6 +37,12 @@ exports.getGetskill = function(req, res) {
     });
 }
 
+exports.getListings = function(req, res){
+    Listing.find({type: req.params.type}).sort({createdAt: -1}).exec(function (err, listings){
+        res.send(listings);
+    });
+}
+
 exports.giveskill = function(req, res) {
     if (!req.user) return res.redirect('/login');
 }
